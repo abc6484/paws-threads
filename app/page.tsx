@@ -246,12 +246,12 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-xs border border-slate-200/90 overflow-hidden flex flex-col transition hover:shadow-md hover:border-slate-300"
               >
                 {/* Product Image Card */}
-                <div className="relative aspect-4/3 sm:aspect-square bg-slate-100 overflow-hidden">
+                <div className="relative aspect-4/3 sm:aspect-square bg-white flex items-center justify-center p-3 sm:p-4 overflow-hidden border-b border-slate-100">
                   <img
                     src={product.imageUrl}
                     alt={product.name}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center transition duration-300 hover:scale-105"
+                    className="w-full h-full object-contain object-center transition duration-300 hover:scale-105"
                   />
                   {/* Rating Tag */}
                   <div className="absolute top-2.5 right-2.5 bg-white/95 backdrop-blur-xs px-2 py-0.5 rounded-full text-xs font-bold text-slate-800 flex items-center gap-1 shadow-xs border border-slate-200/50">
@@ -412,11 +412,13 @@ export default function Home() {
                     className="pt-3 first:pt-0 flex gap-3 items-center justify-between"
                   >
                     {/* Item Thumbnail */}
-                    <img
-                      src={item.product.imageUrl}
-                      alt={item.product.name}
-                      className="w-16 h-16 object-cover rounded-xl border border-slate-200 shrink-0"
-                    />
+                    <div className="w-16 h-16 bg-white p-1 rounded-xl border border-slate-200 shrink-0 flex items-center justify-center overflow-hidden">
+                      <img
+                        src={item.product.imageUrl}
+                        alt={item.product.name}
+                        className="w-full h-full object-contain object-center"
+                      />
+                    </div>
 
                     {/* Item Info */}
                     <div className="flex-1 min-w-0 pr-2">
