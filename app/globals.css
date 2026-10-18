@@ -4,8 +4,22 @@
 @source "../data";
 
 @layer base {
-  body {
-    @apply bg-slate-50 text-slate-800 antialiased;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
   }
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    touch-action: manipulation;
+  }
+}
+
+/* Custom scrollbar for horizontal category filter and tables on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
